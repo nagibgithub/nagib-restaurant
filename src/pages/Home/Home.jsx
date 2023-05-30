@@ -1,8 +1,8 @@
 
 const Home = () => {
     return (
-        <div className='min-h-screen flex justify-center items-center'>
-            This is home            
+        <div className='flex justify-center items-center'>
+            this is home
         </div>
     );
 };

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+.fnt-c {
+    font-family: 'Cinzel', serif;
+}
+
+.social-button {
+    @apply mx-2 border px-2 py-1 rounded
+}
+
+.activeNav{
+    @apply text-[#EEFF25] nevTextCommon
+}
+
+.in-active{
+    @apply nevTextCommon
+}
+
+.pendingNav{
+    @apply nevTextCommon text-slate-600
+}
+
+.nevTextCommon{
+    @apply text-xl font-extrabold px-2
+}
