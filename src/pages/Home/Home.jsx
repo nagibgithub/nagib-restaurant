@@ -1,8 +1,15 @@
+import Banner from "./Banner/Banner";
+import Category from "./Category/Category";
+import Features from "./Features/Features";
+import PopulerMenu from "./PopulerMenu/PopulerMenu";
 
 const Home = () => {
     return (
-        <div className='flex justify-center items-center'>
-            this is home
+        <div>
+            <Banner></Banner>
+            <Category></Category>
+            <PopulerMenu></PopulerMenu>
+            <Features></Features>
         </div>
     );
 };
