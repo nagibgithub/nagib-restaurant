@@ -23,12 +23,3 @@
 .nevTextCommon{
     @apply text-xl font-extrabold px-2
 }
-
-.background-image{
-    background-image: url('/src/assets/home/featured.jpg');
-}
-
-.background-layer{
-    background-color: #0000008e;
-    background: fixed;
-}

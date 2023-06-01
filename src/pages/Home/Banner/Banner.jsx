@@ -10,12 +10,13 @@ import img6 from '../../../assets/home/06.png';
 const Banner = () => {
 
     const images = [img1, img2, img3, img4, img5, img6];
+    // images.map(pd => console.log(images.indexOf(pd)))
 
     return (
         <>
             <Carousel className="" autoPlay={true} infiniteLoop={true} interval={2000} useKeyboardArrows={true} showThumbs={true}>
                 {
-                    images.map(pd => <div key={pd.index}><img src={pd} alt="" /></div>)
+                    images.map((pd, index) => <img key={index} src={pd} alt="" />)
                 }
             </Carousel>
         </>

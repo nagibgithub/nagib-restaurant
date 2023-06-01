@@ -1,0 +1,9 @@
+
+.background-image{
+    background-image: url('/src/assets/home/featured.jpg');
+    background-size: cover;
+}
+
+.background-layer{
+    background-color: #0000009d;
+}

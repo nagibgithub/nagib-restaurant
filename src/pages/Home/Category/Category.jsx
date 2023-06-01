@@ -26,7 +26,7 @@ const Category = () => {
     ];
     return (
         <div>
-            <SectionTitle subHeading={'From 11:00am to 10:00pm'} heading={'order online'}></SectionTitle>
+            <SectionTitle subHeading={'From 11:00am to 10:00pm'} heading={'order online'} color={'blue'}></SectionTitle>
             <Swiper
                 slidesPerView={4}
                 spaceBetween={3}
@@ -35,7 +35,7 @@ const Category = () => {
                 className="mySwiper"
             >
                 {
-                    imgSlides.map(pd => <SwiperSlide className="cursor-grab active:cursor-grabbing" key={pd.index}>
+                    imgSlides.map((pd, index) => <SwiperSlide className="cursor-grab active:cursor-grabbing" key={index}>
                         <img src={pd.img} alt="" />
                         <h3 className="text-4xl uppercase text-center -mt-16 text-white">{pd.name}</h3>
                     </SwiperSlide>)
