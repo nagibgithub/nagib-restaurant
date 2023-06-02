@@ -6,7 +6,7 @@ const Features = () => {
     return (
         <div className="background-image bg-fixed">
             <div className="background-layer text-white py-5">
-                <SectionTitle heading={'from our menu'} subHeading={'Check it out'} color={'white'}></SectionTitle>
+                <SectionTitle heading={'from our menu'} subHeading={'Check it out'}></SectionTitle>
                 <div className="md:flex justify-center items-center pb-20 pt-12 px-36">
                     <div>
                         <img src={img} alt="" />

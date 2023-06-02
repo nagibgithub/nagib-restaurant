@@ -6,13 +6,13 @@ const MainLayout = () => {
 
     const location = useLocation();
 
-    const noHeaderFooter = location.pathname.includes('menu' || 'server' || 'register');
+    const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('server') || location.pathname.includes('register')
 
-    console.log(noHeaderFooter);
+    console.log(location.pathname, noHeaderFooter);
 
 
     return (
-        <div className="">
+        <div className="min-h-screen flex flex-col justify-between">
             {!noHeaderFooter && <NavBar></NavBar>}
             <Outlet></Outlet>
             {!noHeaderFooter && <Footer></Footer>}

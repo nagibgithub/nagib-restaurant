@@ -7,6 +7,8 @@ import Menu from "../pages/Menu/Menu";
 import Shop from "../pages/Shop/Shop";
 import ErrorPage from "../pages/ErrorPage";
 import ServerControl from "../ServerControl/ServerControl";
+import Login from "../pages/LoginRegister/Login";
+import Register from "../pages/LoginRegister/Register";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
             { path: "/menu", element: <Menu /> },
             { path: "/shop", element: <Shop /> },
             { path: "/server", element: <ServerControl /> },
+            { path: "/login", element: <Login /> },
+            { path: "/register", element: <Register /> },
         ]
     },
 ]);
