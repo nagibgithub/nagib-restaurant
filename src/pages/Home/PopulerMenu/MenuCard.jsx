@@ -13,7 +13,7 @@ const MenuCard = ({ menu }) => {
 
 
     return (
-        <div className="py-4 px-8 flex gap-4">
+        <div className="py-4 px-8 flex gap-4 border rounded-lg shadow-lg">
             <img className="w-[118px] rounded-b-full rounded-e-full" src={image} alt="" />
             <div>
                 <h1>{name}---------</h1>

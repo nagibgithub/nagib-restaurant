@@ -9,6 +9,8 @@ import ErrorPage from "../pages/ErrorPage";
 import ServerControl from "../ServerControl/ServerControl";
 import Login from "../pages/LoginRegister/Login";
 import Register from "../pages/LoginRegister/Register";
+import ShopCategory from "../pages/Shop/ShopCategory";
+import ShopCategoryLayout from "../layouts/ShopCategoryLayout";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
             { path: "/register", element: <Register /> },
         ]
     },
+    { path: "/shop/:id", element: <ShopCategoryLayout />, children: [{ path: "/shop/:id", element: <ShopCategory /> }] }
 ]);
 
 export default router;
