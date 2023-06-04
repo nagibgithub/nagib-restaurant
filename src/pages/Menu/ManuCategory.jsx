@@ -4,7 +4,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ManuCategory = ({ menuItem }) => {
 
-    const {menu} = useMenu();
+    const { menu } = useMenu();
     const categoryMenu = menu.filter(pd => pd.category === menuItem.category);
 
     return (

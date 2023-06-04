@@ -10,20 +10,21 @@ const useMenu = () => {
         setLoading(true)
         fetch('https://bistro-boss-server-seven.vercel.app/menu').then(res => res.json()).then(data => {
             setMenu(data);
-
-
             setLoading(false)
         });
     }, []);
+    
     useEffect(() => {
+        setLoading(true)
         const menuCategoryTempo = [];
         for (const menuCategory of menu) !menuCategoryTempo.includes(menuCategory.category) && menuCategoryTempo.push(menuCategory.category);
         setMenuCategory(menuCategoryTempo);
+        setLoading(false);
     }, [menu]);
 
 
 
-    return {menu, loading, menuCategory};
+    return { menu, loading, menuCategory };
 
 };
 

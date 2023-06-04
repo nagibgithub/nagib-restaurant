@@ -4,10 +4,12 @@ import { Helmet } from "react-helmet-async";
 import useMenu from "../../MenuApi/useMenu";
 import { useEffect, useState } from "react";
 import ManuCategory from "./ManuCategory";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const Menu = () => {
 
-    const {menu} = useMenu();
+    const { menu, loading } = useMenu();
 
     const img1 = "https://img.freepik.com/free-photo/big-tasty-burger-with-fries_144627-24415.jpg";
     const img2 = "https://img.freepik.com/premium-photo/chicken-grilled-wooden-board-realistic-3d-product-showcase-food-photography_111797-2064.jpg";
@@ -64,11 +66,17 @@ const Menu = () => {
             <Cover title={'Our Menu'} img={'https://raw.githubusercontent.com/ProgrammingHero1/bistro-boss-client-menu-and-order/main/src/assets/menu/menu-bg.jpg'}></Cover>
 
             <SectionTitle subHeading={"Don't Miss"} heading={"today's offer"}></SectionTitle>
-            <div>
-                {
-                    menuCategoryArrayImage.map((pd, index) => <ManuCategory key={index} menuItem={pd}></ManuCategory>)
-                }
-            </div>
+
+            {
+                loading ?
+                    <p className="font-black text-5xl text-center">Loading Data <FontAwesomeIcon className="text-5xl" icon={faCircleNotch} spin /></p>
+                    :
+                    <div>
+                        {
+                            menuCategoryArrayImage.map((pd, index) => <ManuCategory key={index} menuItem={pd}></ManuCategory>)
+                        }
+                    </div>
+            }
         </>
     );
 };
