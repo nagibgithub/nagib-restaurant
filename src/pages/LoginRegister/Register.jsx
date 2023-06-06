@@ -3,12 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import GoogleButton from "./GoogleButton";
 
 const Register = () => {
 
     const [showHide, setShowHide] = useState(false);
     const [disabled, setDisabled] = useState(true);
     const handleShowPass = () => setShowHide(!showHide);
+    // const [passLength, setPassLength] = useState('');
+    // const [passNumber, setPassNumber] = useState('');
+    // const [passAlphabate, setPassAlphabate] = useState('');
+    // const [passUppercase, setPassUppercase] = useState('');
+    // const [passLowercase, setPassLowercase] = useState('');
 
     const captchaRef = useRef(null);
 
@@ -31,13 +37,28 @@ const Register = () => {
         const rePassword = form.rePassword.value;
         const imageUrl = form.imageUrl.value;
 
-        password === rePassword ? console.log(true) : console.log(false);
+        if (password !== rePassword) {
+            alert('Password is not matched');
+            return;
+        } else if (password.length < 8) {
+            alert('password must be atleast 8 character');
+            return;
+        } else if (!/(?=.*[A-Z].*[a-z])/.test(password)) {
+            alert('atleast one UpperCase and one LowerCase Letter');
+            return;
+        }
+
+        // /(?=.*[A-Z].*[a-z])/.test(password)?
+
+
+
+        // password === rePassword ? console.log(true) : console.log(false);
 
 
 
         const formData = { name, email, password, imageUrl, rePassword };
         console.log(formData);
-    }
+    };
 
 
     return (
@@ -137,10 +158,17 @@ const Register = () => {
 
                                 {/* submit button */}
                                 <div className="form-control mt-6 md:col-span-2">
-                                    <input type="submit" className="btn btn-primary" value={'Submit'} disabled={disabled}/>
+                                    <input type="submit" className="btn btn-primary" value={'Submit'} disabled={disabled} />
                                 </div>
 
                             </form>
+
+                            {/* google login */}
+                            <div>
+                                <GoogleButton></GoogleButton>
+                            </div>
+
+
 
                             {/* login link */}
                             <div className="w-full flex justify-center">

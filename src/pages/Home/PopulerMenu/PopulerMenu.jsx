@@ -35,9 +35,7 @@ const PopulerMenu = () => {
 
                 {
                     loading ?
-                        <>
-                            <p className="font-black text-5xl text-center">Loading Data <FontAwesomeIcon className="text-5xl" icon={faCircleNotch} spin /></p>
-                        </>
+                        <p className="font-black text-5xl text-center">Loading Data <FontAwesomeIcon className="text-5xl" icon={faCircleNotch} spin /></p>
                         :
                         <div className="grid md:grid-cols-2 gap-4">
                             {

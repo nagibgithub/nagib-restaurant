@@ -11,6 +11,7 @@ import Login from "../pages/LoginRegister/Login";
 import Register from "../pages/LoginRegister/Register";
 import ShopCategory from "../pages/Shop/ShopCategory";
 import ShopCategoryLayout from "../layouts/ShopCategoryLayout";
+import PassTest from "../pages/example/PassTest";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
             { path: "/register", element: <Register /> },
         ]
     },
-    { path: "/shop/:id", element: <ShopCategoryLayout />, children: [{ path: "/shop/:id", element: <ShopCategory /> }] }
+    { path: "/shop/:id", element: <ShopCategoryLayout />, children: [{ path: "/shop/:id", element: <ShopCategory /> }] },
+    { path: '/test', element: <PassTest /> }
 ]);
 
 export default router;

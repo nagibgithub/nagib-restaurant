@@ -1,6 +1,15 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
+
+    const { loading, user, logOut } = useContext(AuthContext);
+    console.log(loading, user);
+
+    const handleLogout = () => logOut();
 
     const navBars = [
         { id: 1, title: "Home", path: "/" },
@@ -34,9 +43,26 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={'/login'} className="btn">Login</Link>
+                    {
+                        user ?
+                            <>
+                                {
+                                    user.photoURL ?
+                                        <>
+                                        <img className="w-16 rounded-full border-4 border-sky-500" src={user.photoURL} alt="" />
+                                        <button onClick={handleLogout} className="btn-n w-full flex justify-center">Log Out</button>
+                                        </>
+                                        :
+                                        <><FontAwesomeIcon icon={faUser} /></>
+                                }
+                            </>
+                            :
+                            <>
+                                <Link to={'/login'} className="btn">Login</Link>
+                            </>
+                    }
                 </div>
-            </nav>
+            </nav >
         </>
     );
 };
